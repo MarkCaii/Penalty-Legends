@@ -1,0 +1,35 @@
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class Please extends JFrame implements ActionListener{
+   JPanel jp = new JPanel();
+   JButton jb = new JButton();
+   public Please() {
+       setTitle("Penalty Defense!");
+       setVisible(true);
+       setSize(500, 500);
+       setDefaultCloseOperation(EXIT_ON_CLOSE);
+       jb.setIcon(new ImageIcon("C:\\users\\lynnl\\Downloads\\Soccerballs.jpg"));
+       jp.add(jb);
+       add(jp);
+       jb.addActionListener(this);
+       validate();
+   }
+   public static void main(String[]args){
+       Please po = new Please();
+   }
+   @Override
+   public void actionPerformed(ActionEvent e) {
+       if (e.getSource()==jb){
+           JFrame window = new JFrame();
+           Second s = new Second();
+           window.setSize(1600,1000);
+           window.setTitle("Soccer");
+           window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           window.setVisible(true);
+           window.setResizable(false);
+           window.add(s);
+       }
+
+   }
+}
